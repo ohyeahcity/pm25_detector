@@ -78,8 +78,8 @@
       "lang_iphone_title": "iPhone",
       "lang_iphone_text": "Support iOS 8.4 or later",
       "lang_download_text02": "Download",
-      "lang_win_title": "APP使用手冊",
-      "lang_win_text01": "下載App使用手冊電子檔PDF",
+      "lang_win_title": "APP user manual ",
+      "lang_win_text01": "Download App user manual ",
 
       "lang_download_text03": "Download",
       "lang_spec_title": "Product Spec",
