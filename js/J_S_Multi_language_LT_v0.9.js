@@ -104,12 +104,6 @@ function changeImageByLang(lang_index){
 
 // 根據語系更改所有文字
 function changeAllNavBarUIWording(arr,lang_index){
-/*
-  document.getElementById('nav_link1_wording').innerHTML = arr[lang_index].NavLink1;
-  document.getElementById('nav_link2_wording').innerHTML = arr[lang_index].NavLink2;
-  document.getElementById('nav_link3_wording').innerHTML = arr[lang_index].NavLink3;
-  document.getElementById('nav_link4_wording').innerHTML = arr[lang_index].NavLink4;
-  document.getElementById('nav_link5_wording').innerHTML = arr[lang_index].NavLink5;*/
   document.getElementById('lang_navproduct').innerHTML = arr[lang_index].lang_navproduct;
   document.getElementById('lang_navscenario').innerHTML = arr[lang_index].lang_navscenario;
   document.getElementById('lang_navspec').innerHTML = arr[lang_index].lang_navspec;
