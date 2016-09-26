@@ -17,20 +17,13 @@ function chg_lang(lang_index){
         forceChangeLangSetCookie();
         auto_chg_lang(lang_index);
 }
-
-
-
 // 切換語系
 function auto_chg_lang(lang_index){
-
       //寫入Cookie
       setCookie('lang_code',lang_index,'365');
       var xck= getCookie('lang_code');
-
-
 			//更改標題文字
       changeWebTitle(lang_index);
-
       //更改BODY 語系標籤
       changeCSSTag_Multi_Lang(lang_index);
       //更改Navbar文件
@@ -52,11 +45,6 @@ function auto_chg_lang(lang_index){
       };
       xmlhttp.open("GET", url, true);
       xmlhttp.send();
-
-
-
-
-
 		}
 
     // 設定cookie 並將 forceChangeLang_index 值填上1,cookie一小時後失效
@@ -64,17 +52,13 @@ function auto_chg_lang(lang_index){
       //寫入Cookie
       setCookie('forceChangeLang_index',1,'0.1');
       var xcka= getCookie('forceChangeLang_index');
-
     }
-
 
 //主要功能1 : Multi-lang Title 根據 on_click 事件切換網頁標題
 function changeWebTitle(lang_index){
       //變更多語系網頁Title
       document.getElementsByTagName("title")[0].innerHTML = Multi_Lang_Title[lang_index];
       return;
-
-
 }
 
 //主要功能2 : 賦予Body 語系標籤，例如 TW,ENG,JP。以便讓不同的CSS樣式來切換背景圖片
@@ -90,19 +74,14 @@ function changeCSSTag_Multi_Lang(lang_index){
 
 //主要功能3 : 使用DOM方法，更換下拉&Navbar顯示介面
 function changeNavBarUIWording(lang_index){
-
   //更改Drondown UI 語系顯示
   //document.getElementById('lang_btn_1').innerHTML = Multi_Lang_Wording[lang_index];
-
   document.getElementById('change_dropdown_title').innerHTML =  Multi_Lang_Wording[lang_index]+'<b class="caret"></b>';
-
   return;
 }
 
 //控制圖片中的語系
 function changeImageByLang(lang_index){
-
-
     if(lang_index==0){
           document.getElementById('slideshowImage1').src = "images/slider_example_1.jpg" ;
           document.getElementById('slideshowImage2').src = "images/slider_example_2.jpg" ;
@@ -120,19 +99,8 @@ function changeImageByLang(lang_index){
           document.getElementById('lang_blue_img_min').src = "images/bluetooth_bg_min_eng.jpg" ;
           console.log("english image now");
         }
-
   return;
-
 }
-
-
-
-
-
-
-
-
-
 
 // 根據語系更改所有文字
 function changeAllNavBarUIWording(arr,lang_index){
@@ -142,20 +110,16 @@ function changeAllNavBarUIWording(arr,lang_index){
   document.getElementById('nav_link3_wording').innerHTML = arr[lang_index].NavLink3;
   document.getElementById('nav_link4_wording').innerHTML = arr[lang_index].NavLink4;
   document.getElementById('nav_link5_wording').innerHTML = arr[lang_index].NavLink5;*/
-
   document.getElementById('lang_navproduct').innerHTML = arr[lang_index].lang_navproduct;
   document.getElementById('lang_navscenario').innerHTML = arr[lang_index].lang_navscenario;
   document.getElementById('lang_navspec').innerHTML = arr[lang_index].lang_navspec;
   document.getElementById('lang_navload').innerHTML = arr[lang_index].lang_navload;
-
   document.getElementById('lang_navch').innerHTML = arr[lang_index].lang_navch;
   document.getElementById('lang_naven').innerHTML = arr[lang_index].lang_naven;
   document.getElementById('lang_navshop').innerHTML = arr[lang_index].lang_navshop;
-
   document.getElementById('lang_comeright_cont').innerHTML = arr[lang_index].lang_comeright_cont;
   document.getElementById('lang_cause_cont01').innerHTML = arr[lang_index].lang_cause_cont01;
   document.getElementById('lang_cause_cont02').innerHTML = arr[lang_index].lang_cause_cont02;
-
   document.getElementById('lang_deep_title').innerHTML = arr[lang_index].lang_deep_title;
   document.getElementById('lang_deep_cont01').innerHTML = arr[lang_index].lang_deep_cont01;
   document.getElementById('lang_deep_cont02').innerHTML = arr[lang_index].lang_deep_cont02;
@@ -190,18 +154,9 @@ function changeAllNavBarUIWording(arr,lang_index){
   document.getElementById('lang_spec_text05').innerHTML = arr[lang_index].lang_spec_text05;
   document.getElementById('lang_spec_title06').innerHTML = arr[lang_index].lang_spec_title06;
   document.getElementById('lang_spec_text06').innerHTML = arr[lang_index].lang_spec_text06;
-
-
-
   return;
 }
-
-
-
-
-
 function detectUserLang(){
-
     var IsforceChangeLang_index= getCookie('forceChangeLang_index');
     var tempLang = window.navigator.userLanguage || window.navigator.language ;
     var currentBrowserLang = tempLang.toLowerCase();
@@ -230,9 +185,7 @@ function detectUserLang(){
             autolang_index=1;
         break;
     }
-
     setCookie('lang_code',autolang_index,'365');
-
   } else {
     var Previous_Lang_index= getCookie('lang_code');
     auto_chg_lang(Previous_Lang_index);
